@@ -13,9 +13,7 @@ jobs:
       # Configurez Java
       - run:
           name: Set Java version
-          command: |
-            sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0_version/bin/java
-            sudo update-alternatives --set javac /usr/lib/jvm/jdk1.8.0_version/bin/javac
+
 
       # Exécutez les tests unitaires avec Maven
       - run:
