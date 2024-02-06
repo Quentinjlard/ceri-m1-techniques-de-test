@@ -10,10 +10,6 @@ jobs:
     steps:
       - checkout
 
-      # Configurez Java
-      - run:
-          name: Set Java version
-
 
       # Exécutez les tests unitaires avec Maven
       - run:
