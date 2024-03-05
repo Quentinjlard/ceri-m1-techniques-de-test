@@ -4,6 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import jdk.jfr.internal.MirrorEvent;
+import org.junit.jupiter.api.BeforeEach;
+import org.mockito.MockitoAnnotations;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -14,15 +18,22 @@ public class IPokemonTrainerFactoryTest {
     private IPokemonTrainerFactory trainerFactory;
 
     @Mock
-    private IPokedexFactory pokedexFactoryMock;
+    private IPokedexFactory pokedexFactory;
+
+    @Mock
+    private IPokedex mockPokedex;
 
     @Before
     public void setUp() {
         // Créez un mock pour IPokedexFactory
-        pokedexFactoryMock = mock(IPokedexFactory.class);
+        pokedexFactory = mock(IPokedexFactory.class);
 
         // Initialisez l'instance de la classe PokemonTrainerFactory à tester
         trainerFactory = mock(IPokemonTrainerFactory.class);
+
+
+        mockPokedex = mock(IPokedex.class);
+
     }
 
     @Test
@@ -35,17 +46,19 @@ public class IPokemonTrainerFactoryTest {
         IPokemonMetadataProvider metadataProviderMock = mock(IPokemonMetadataProvider.class);
         IPokemonFactory pokemonFactoryMock = mock(IPokemonFactory.class);
 
-        // Créez une instance mockPokedex
-        IPokedex mockPokedex = mock(IPokedex.class);
 
         // Configurez la création du mockPokedex dans pokedexFactoryMock
-        when(pokedexFactoryMock.createPokedex(metadataProviderMock, pokemonFactoryMock)).thenReturn(mockPokedex);
+        // when(pokedexFactoryMock.createPokedex(metadataProviderMock, pokemonFactoryMock)).thenReturn(mockPokedex);
+
+        // WHEN DE Create TrainerFactory
+        PokemonTrainer mockTrainer;
+        when(trainerFactory.createTrainer(trainerName, trainerTeam, pokedexFactory)).thenReturn(mockTrainer);
 
         // Agissez
-        PokemonTrainer createdTrainer = trainerFactory.createTrainer(trainerName, trainerTeam, pokedexFactoryMock);
+        PokemonTrainer createdTrainer = trainerFactory.createTrainer(trainerName, trainerTeam, pokedexFactory);
 
         // Vérifiez
-        //assertEquals(trainerName, createdTrainer.getName());
+        assertEquals(trainerName, createdTrainer.getName());
         assertEquals(trainerTeam, createdTrainer.getTeam());
         assertEquals(mockPokedex, createdTrainer.getPokedex());
     }
