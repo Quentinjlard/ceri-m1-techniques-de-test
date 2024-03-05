@@ -6,14 +6,11 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 
 public class IPokemonTrainerFactoryTest {
 
-    @Mock
-    IPokemonTrainerFactory trainerFactory;
-    @Mock
-    IPokedexFactory pokedexFactoryMock;
+    private IPokemonTrainerFactory trainerFactory;
+    private IPokedexFactory pokedexFactoryMock;
 
     @Before
     public void setUp() {
@@ -48,5 +45,4 @@ public class IPokemonTrainerFactoryTest {
         assertEquals(trainerTeam, createdTrainer.getTeam());
         assertEquals(mockPokedex, createdTrainer.getPokedex());
     }
-
 }
