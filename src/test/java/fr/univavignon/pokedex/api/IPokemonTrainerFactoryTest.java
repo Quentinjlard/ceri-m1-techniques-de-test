@@ -31,9 +31,7 @@ public class IPokemonTrainerFactoryTest {
         // Initialisez l'instance de la classe PokemonTrainerFactory à tester
         trainerFactory = mock(IPokemonTrainerFactory.class);
 
-
         mockPokedex = mock(IPokedex.class);
-
     }
 
     @Test
@@ -46,12 +44,11 @@ public class IPokemonTrainerFactoryTest {
         IPokemonMetadataProvider metadataProviderMock = mock(IPokemonMetadataProvider.class);
         IPokemonFactory pokemonFactoryMock = mock(IPokemonFactory.class);
 
-
         // Configurez la création du mockPokedex dans pokedexFactoryMock
-        // when(pokedexFactoryMock.createPokedex(metadataProviderMock, pokemonFactoryMock)).thenReturn(mockPokedex);
+        when(pokedexFactory.createPokedex(metadataProviderMock, pokemonFactoryMock)).thenReturn(mockPokedex);
 
         // WHEN DE Create TrainerFactory
-        PokemonTrainer mockTrainer;
+        PokemonTrainer mockTrainer = new PokemonTrainer(trainerName, trainerTeam, mockPokedex);
         when(trainerFactory.createTrainer(trainerName, trainerTeam, pokedexFactory)).thenReturn(mockTrainer);
 
         // Agissez
