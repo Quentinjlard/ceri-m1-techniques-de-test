@@ -11,15 +11,12 @@ public class IPokemonMetadataProviderTest {
     private PokemonMetadata expectedMetadata;
 
     @Before
-    public void setUp() {
+    public void setUp() throws PokedexException {
         metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
         expectedMetadata = new PokemonMetadata(1, "Bulbasaur", 49, 49, 45);
 
-        try {
-            Mockito.when(metadataProvider.getPokemonMetadata(1)).thenReturn(expectedMetadata);
-        } catch (PokedexException e) {
-            throw new RuntimeException(e);
-        }
+
+        Mockito.when(metadataProvider.getPokemonMetadata(1)).thenReturn(expectedMetadata);
     }
 
     @Test
