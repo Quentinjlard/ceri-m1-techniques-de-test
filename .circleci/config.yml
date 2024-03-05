@@ -21,6 +21,7 @@ jobs:
       # Téléchargez les rapports de couverture vers Codecov
       - codecov/upload
 
+
 workflows:
   version: 2
   upload-to-codecov:
