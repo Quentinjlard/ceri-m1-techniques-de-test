@@ -4,10 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-import jdk.jfr.internal.MirrorEvent;
-import org.junit.jupiter.api.BeforeEach;
-import org.mockito.MockitoAnnotations;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
