@@ -21,7 +21,7 @@ public class IPokemonTrainerFactoryTest {
         pokedexFactoryMock = mock(IPokedexFactory.class);
 
         // Initialisez l'instance de la classe PokemonTrainerFactory à tester
-        //trainerFactory = new PokemonTrainerFactory();
+        trainerFactory = mock(IPokemonTrainerFactory.class);
     }
 
     @Test
@@ -48,4 +48,5 @@ public class IPokemonTrainerFactoryTest {
         assertEquals(trainerTeam, createdTrainer.getTeam());
         assertEquals(mockPokedex, createdTrainer.getPokedex());
     }
+
 }
