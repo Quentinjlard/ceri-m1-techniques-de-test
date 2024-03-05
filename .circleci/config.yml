@@ -19,7 +19,7 @@ jobs:
           command: mvn test
 
       # Téléchargez les rapports de couverture vers Codecov
-      - codecov/upload:
+      - codecov/upload
 
 workflows:
   version: 2
