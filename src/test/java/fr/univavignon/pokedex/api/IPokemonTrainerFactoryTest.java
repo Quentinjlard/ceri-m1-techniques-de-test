@@ -6,19 +6,22 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
 public class IPokemonTrainerFactoryTest {
 
-    private IPokemonTrainerFactory trainerFactory;
-    private IPokedexFactory pokedexFactoryMock;
+    @Mock
+    IPokemonTrainerFactory trainerFactory;
+    @Mock
+    IPokedexFactory pokedexFactoryMock;
 
     @Before
     public void setUp() {
-        // Create a mock for IPokedexFactory
+        // Créez un mock pour IPokedexFactory
         pokedexFactoryMock = mock(IPokedexFactory.class);
 
-        // Create an instance of the actual PokemonTrainerFactory class to be tested
-        // trainerFactory = new PokemonTrainerFactory();
+        // Initialisez l'instance de la classe PokemonTrainerFactory à tester
+        //trainerFactory = new PokemonTrainerFactory();
     }
 
     @Test
@@ -27,24 +30,22 @@ public class IPokemonTrainerFactoryTest {
         String trainerName = "Ash Ketchum";
         Team trainerTeam = Team.MYSTIC;
 
-        // Mock behavior for the pokedexFactoryMock
+        // Comportement simulé pour le mock pokedexFactoryMock
         IPokemonMetadataProvider metadataProviderMock = mock(IPokemonMetadataProvider.class);
         IPokemonFactory pokemonFactoryMock = mock(IPokemonFactory.class);
 
-        // Create a mockPokedex instance
+        // Créez une instance mockPokedex
         IPokedex mockPokedex = mock(IPokedex.class);
 
-        // Set up the mockPokedex creation in the pokedexFactoryMock
+        // Configurez la création du mockPokedex dans pokedexFactoryMock
         when(pokedexFactoryMock.createPokedex(metadataProviderMock, pokemonFactoryMock)).thenReturn(mockPokedex);
 
-        // Act
+        // Agissez
         PokemonTrainer createdTrainer = trainerFactory.createTrainer(trainerName, trainerTeam, pokedexFactoryMock);
 
-        // Assert
+        // Vérifiez
         assertEquals(trainerName, createdTrainer.getName());
         assertEquals(trainerTeam, createdTrainer.getTeam());
         assertEquals(mockPokedex, createdTrainer.getPokedex());
     }
-
-
 }
