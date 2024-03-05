@@ -6,10 +6,14 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
 public class IPokemonTrainerFactoryTest {
 
+    @Mock
     private IPokemonTrainerFactory trainerFactory;
+
+    @Mock
     private IPokedexFactory pokedexFactoryMock;
 
     @Before
