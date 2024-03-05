@@ -1,4 +1,9 @@
+# circleci.yml
+
 version: 2.1
+
+orbs:
+  codecov: codecov/codecov@4.0.1
 
 jobs:
   build:
@@ -10,15 +15,18 @@ jobs:
     steps:
       - checkout
 
-
       # Exécutez les tests unitaires avec Maven
       - run:
           name: Run Unit Tests
           command: mvn test
 
+      # Téléchargez les rapports de couverture vers Codecov
+      - codecov/upload:
+          token: a047ef10-efce-4de0-a87c-c51aa9044ef7  # Remplacez par votre propre jeton d'authentification Codecov
+
 workflows:
   version: 2
-  build:
+  upload-to-codecov:
     jobs:
       - build:
           filters:
