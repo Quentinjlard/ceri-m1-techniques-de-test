@@ -11,7 +11,6 @@ public class IPokemonFactoryTest {
     @Mock
     private IPokemonFactory pokemonFactory;
 
-
     @Test
     public void testCreatePokemon() {
         int index = 0;
