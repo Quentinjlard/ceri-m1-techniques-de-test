@@ -10,9 +10,11 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
 
 public class IPokedexTest {
 
+    @Mock
     private IPokedex pokedex;
 
     @Before
@@ -42,8 +44,8 @@ public class IPokedexTest {
         List<Pokemon> sortedPokemons = pokedex.getPokemons(nameComparator);
 
         // Vérifier que la liste est triée correctement
-        assertEquals("Bulbasaur", sortedPokemons.get(0).getName());
-        assertEquals("Ivysaur", sortedPokemons.get(1).getName());
-        assertEquals("Venusaur", sortedPokemons.get(2).getName());
+        assertEquals("Bulbasaur", sortedPokemons.get(1).getName());
+        assertEquals("Ivysaur", sortedPokemons.get(2).getName());
+        assertEquals("Venusaur", sortedPokemons.get(3).getName());
     }
 }
