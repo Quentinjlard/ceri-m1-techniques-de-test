@@ -29,12 +29,14 @@ public class IPokedexFactoryTest {
         IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
         IPokedexFactory pokedexFactory = Mockito.mock(IPokedexFactory.class);
 
-        assertNotNull(pokedexFactory);
+        IPokedex expectedPokedex = pokedex;
+
+        Mockito.when(pokedexFactory.createPokedex(metadataProvider,pokemonFactory)).thenReturn(expectedPokedex);
 
         // Assuming createPokedex method is part of the IPokedexFactory interface
         IPokedex pokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
 
-        assertNotNull(pokedex);
+        assertEquals(expectedPokedex, pokedex);
     }
 
 
