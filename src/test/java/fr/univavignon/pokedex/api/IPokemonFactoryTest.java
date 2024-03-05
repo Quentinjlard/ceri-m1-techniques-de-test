@@ -31,11 +31,11 @@ public class IPokemonFactoryTest {
         Pokemon simulatedPokemon = new Pokemon(index, "Pikachu", 70, 60, 80, cp, hp, dust, candy, iv);
 
         // Configuration du comportement du mock
-        when(pokemonFactory.createPokemon(index, cp, hp, dust, candy, iv))
+        when(pokemonFactory.createPokemon(index, cp, hp, dust, candy))
                 .thenReturn(simulatedPokemon);
 
         // Appel de la méthode à tester
-        Pokemon createdPokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy, iv);
+        Pokemon createdPokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy);
 
         // Vérification des attributs du Pokémon créé
         assertNotNull(createdPokemon);
@@ -47,6 +47,6 @@ public class IPokemonFactoryTest {
         assertEquals(iv, createdPokemon.getIv(), 0.001); // Vérification de l'IV avec une tolérance de 0.001
 
         // Vérification que la méthode du mock a été appelée
-        verify(pokemonFactory, times(1)).createPokemon(index, cp, hp, dust, candy, iv);
+        verify(pokemonFactory, times(1)).createPokemon(index, cp, hp, dust, candy);
     }
 }
