@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@4.0.1
+  browser-tools: circleci/browser-tools@1.2.3
 
 jobs:
   build:
@@ -20,6 +21,9 @@ jobs:
 
       # Téléchargez les rapports de couverture vers Codecov
       - codecov/upload
+
+      - store_artifacts:
+          path: target
 
 
 workflows:
