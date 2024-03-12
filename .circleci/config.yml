@@ -34,7 +34,7 @@ jobs:
 
 workflows:
   version: 2
-  upload-to-codecov:
+  codecov-job:
     jobs:
       - build:
           filters:
