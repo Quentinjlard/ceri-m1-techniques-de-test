@@ -7,7 +7,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk  # Utilisez une image Docker avec Java 8 ou supérieur
+      - image: circleci/openjdk:21-jdk  # Utilisez une image Docker avec Java 8 ou supérieur
 
     working_directory: ~/app
 
