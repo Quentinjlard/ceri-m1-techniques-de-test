@@ -30,7 +30,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - codecov/upload:
-          file: target/site/jacoco/jacoco.xml
+          file: target/my-reports/jacoco.xml
 
 workflows:
   version: 2
