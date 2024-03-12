@@ -25,23 +25,11 @@ jobs:
       - store_artifacts:
           path: target
 
-
 workflows:
   version: 2
   upload-to-codecov:
     jobs:
-      - codecov/upload:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
       - build:
           filters:
             branches:
               only: master
-
-
-
-
-
