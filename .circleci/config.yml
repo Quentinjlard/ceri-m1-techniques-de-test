@@ -30,12 +30,12 @@ workflows:
   version: 2
   upload-to-codecov:
     jobs:
-      - codecov/upload :
-            with:
-                flags: smart-tests
-                verbose: true
-                env:
-                CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - codecov/upload:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
       - build:
           filters:
             branches:
