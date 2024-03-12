@@ -1,8 +1,7 @@
-version: '2.1'
+version: 2.1
 
 orbs:
   codecov: codecov/codecov@4.0.1
-  browser-tools: circleci/browser-tools@1.2.3
 
 jobs:
   build:
@@ -19,6 +18,11 @@ jobs:
           name: Run Unit Tests
           command: mvn test
 
+      # Générez le rapport de couverture avec JaCoCo
+      - run:
+          name: Generate JaCoCo Report
+          command: mvn jacoco:report
+
       # Téléchargez les rapports de couverture vers Codecov
       - codecov/upload:
           file: target/site/jacoco/jacoco.xml
@@ -30,4 +34,7 @@ workflows:
   version: 2
   upload-to-codecov:
     jobs:
-      - codecov/upload
+      - build:
+          filters:
+            branches:
+              only: master
