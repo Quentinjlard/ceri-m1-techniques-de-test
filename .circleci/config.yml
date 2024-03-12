@@ -30,9 +30,6 @@ workflows:
   version: 2
   upload-to-codecov:
     jobs:
-      - checkout :
-            uses: actions/checkout@v4
-
       - codecov/upload :
             with:
                 flags: smart-tests
