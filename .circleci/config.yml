@@ -30,8 +30,4 @@ workflows:
   version: 2
   upload-to-codecov:
     jobs:
-      - build:
-          filters:
-            branches:
-              only: master
       - codecov/upload
