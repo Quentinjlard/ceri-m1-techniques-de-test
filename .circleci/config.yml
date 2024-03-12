@@ -24,8 +24,7 @@ jobs:
           command: mvn jacoco:report
 
       # Téléchargez les rapports de couverture vers Codecov
-      - codecov/upload:
-          file: target/site/jacoco/jacoco.xml
+      - codecov/upload
 
       - store_artifacts:
           path: target
@@ -38,3 +37,4 @@ workflows:
           filters:
             branches:
               only: master
+      - codecov/upload
