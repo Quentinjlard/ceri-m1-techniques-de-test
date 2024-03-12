@@ -30,8 +30,15 @@ workflows:
   version: 2
   upload-to-codecov:
     jobs:
-      - checkout
-      - codecov/upload
+      - checkout :
+            uses: actions/checkout@v4
+
+      - codecov/upload :
+            with:
+                flags: smart-tests
+                verbose: true
+                env:
+                CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
       - build:
           filters:
             branches:
