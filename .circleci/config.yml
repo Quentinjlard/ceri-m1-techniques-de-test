@@ -30,7 +30,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - codecov/upload:
-          file: target/my-reports/jacoco.xml
+          bash <(curl -s https://codecov.io/bash)
 
 workflows:
   version: 2
