@@ -21,8 +21,16 @@ jobs:
           name: Generate JaCoCo Report
           command: mvn jacoco:report
 
+
       - store_artifacts:
           path: target
+
+  codecov-job:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - codecov/upload:
+          file: target/site/jacoco/jacoco.xml
 
 workflows:
   version: 2
@@ -32,5 +40,4 @@ workflows:
           filters:
             branches:
               only: master
-      - codecov/upload:
-          file: target/site/jacoco/jacoco.xml
+
