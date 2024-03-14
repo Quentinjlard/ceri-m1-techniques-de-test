@@ -17,20 +17,23 @@ jobs:
           name: Run Unit Tests
           command: mvn test
 
-      - run:
-          name: Generate JaCoCo Report
-          command: mvn jacoco:report
-
-
       - store_artifacts:
           path: target
 
   codecov-job:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/openjdk:8-jdk  # Utilisez une image Docker avec Java 8 ou supérieur
+
     steps:
-      - codecov/upload:
-          bash <(curl -s https://codecov.io/bash)
+      - checkout
+
+      - run:
+          name: Generate Coverage Report
+          command: mvn jacoco:report
+
+      - run:
+          name: Upload Coverage Report
+          command: bash <(curl -s https://codecov.io/bash)
 
 workflows:
   version: 2
@@ -40,5 +43,6 @@ workflows:
           filters:
             branches:
               only: master
-
-
+      - codecov-job:
+          requires:
+            - build
