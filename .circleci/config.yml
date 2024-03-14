@@ -55,3 +55,4 @@ workflows:
       - codecov-job:
           requires:
             - build
+            - codecov-job
