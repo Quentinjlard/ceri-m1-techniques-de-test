@@ -8,8 +8,6 @@
         <!-- Exemple de règle pour vérifier les noms des classes -->
         <module name="TypeName">
             <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
-            <property name="allowClasses" value="true"/>
-            <property name="allowInterfaces" value="true"/>
         </module>
         <!-- Exemple de règle pour vérifier les noms des méthodes -->
         <module name="MethodName">
