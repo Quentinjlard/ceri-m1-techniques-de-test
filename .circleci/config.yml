@@ -7,42 +7,37 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk  # Use a Docker image with Java 8 or higher
-
     working_directory: ~/app
-
     steps:
       - checkout
-
       - run:
           name: Run Unit Tests
           command: mvn test
-
       - store_artifacts:
           path: target
-
       - run:
           name: Run Checkstyle
           command: mvn checkstyle:check
-
       - run:
           name: Generate Coverage Report
           command: mvn jacoco:report
-
+      - persist_to_workspace:
+          root: ~/app
+          paths:
+            - target
 
   codecov-job:
     docker:
       - image: circleci/openjdk:8-jdk  # Use a Docker image with Java 8 or higher
-
     steps:
-      - checkout
-
-      - run:
-          name: Generate Coverage Report
-          command: mvn jacoco:report
-
+      - attach_workspace:
+          at: ~/app
       - run:
           name: Upload Coverage Report
           command: bash <(curl -s https://codecov.io/bash)
+      - run:
+          name: Upload Checkstyle Report
+          command: mvn checkstyle:checkstyle
 
 workflows:
   version: 2

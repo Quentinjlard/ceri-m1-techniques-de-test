@@ -48,3 +48,5 @@ Si vous ne spécifiez pas de tag, le dernier commit à la date-heure de la fin d
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://app.circleci.com/pipelines/circleci/4pTDtLg5hUaDMd85yZjtX5/M47uwUrhPaVPDdsfFE2pGu)
 
 [![codecov](https://codecov.io/gh/<your-name>/<project-name>/branch/master/graph/badge.svg)](https://output.circle-artifacts.com/output/job/8d554106-6c3c-4136-9cf9-d28ddbd4085b/artifacts/0/target/my-reports/index.html)
+
+[![Checkstyle](https://img.shields.io/badge/checkstyle-passing-brightgreen)](URL_DU_RAPPORT_CHECKSTYLE)
