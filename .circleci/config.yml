@@ -28,16 +28,17 @@ jobs:
 
   codecov-job:
     docker:
-      - image: circleci/openjdk:8-jdk  # Use a Docker image with Java 8 or higher
+      - image: cimg/openjdk:18.0.2
     steps:
-      - attach_workspace:
-          at: ~/app
-      - run:
-          name: Upload Coverage Report
-          command: bash <(curl -s https://codecov.io/bash)
-      - run:
-          name: Upload Checkstyle Report
-          command: mvn checkstyle:checkstyle
+        - checkout
+        - run:
+            name: Install dependencies
+            command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+        - run:
+            name: Run tests and collect coverage
+            command: mvn -B test
+        - codecov/upload
+
 
 workflows:
   version: 2
