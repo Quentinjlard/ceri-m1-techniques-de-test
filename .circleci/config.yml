@@ -55,23 +55,25 @@ jobs:
       - store_artifacts:
           path: target/checkstyle-result.xml
 
-publish-javadoc-job:
-  docker:
-    - image: cimg/openjdk:18.0.2
-  steps:
-    - checkout
-    - name: Configurer JDK
-      uses: actions/setup-java@v2
-      with:
-        java-version: '8' # Ou la version de Java que vous utilisez
-    - run:
-        name: Générer Javadoc
-        command: mvn javadoc:javadoc
-    - name: Déployer sur GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./target/site/apidocs # Chemin vers le répertoire contenant la Javadoc générée
+  publish-javadoc-job:
+    docker:
+      - image: cimg/openjdk:18.0.2
+    steps:
+      - checkout
+      - run :
+          name: Configurer JDK
+          uses: actions/setup-java@v2
+          with:
+            java-version: '8' # Ou la version de Java que vous utilisez
+      - run:
+          name: Générer Javadoc
+          command: mvn javadoc:javadoc
+      - run :
+          name: Déployer sur GitHub Pages
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./target/site/apidocs # Chemin vers le répertoire contenant la Javadoc générée
 
 workflows:
   version: 2
