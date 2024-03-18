@@ -3,10 +3,7 @@
         "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 <module name="Checker">
-    <module name="TreeWalker">
-        <!-- Ajoutez ici les modules spécifiques que vous souhaitez utiliser -->
-        <!-- Exemple avec un module de Checkstyle -->
-        <module name="NewlineAtEndOfFile"/>
-        <!-- Ajoutez d'autres modules de Checkstyle selon vos besoins -->
-    </module>
+    <!-- Vous pouvez ajouter d'autres modules ici selon vos besoins -->
+    <module name="NewlineAtEndOfFile"/>
+    <!-- Ajoutez ici d'autres modules de Checkstyle -->
 </module>
