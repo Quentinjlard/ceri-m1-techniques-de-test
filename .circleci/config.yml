@@ -36,8 +36,10 @@ jobs:
             command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
         - run:
             name: Run tests and collect coverage
-            command: mvn -B test
-        - codecov/upload
+            command: mvn clean test jacoco:report
+        - run :
+            name: Upload coverage to Codecov
+            command: bash <(curl -s https://codecov.io/bash)
 
 
 workflows:
