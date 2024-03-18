@@ -6,20 +6,20 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk  # Use a Docker image with Java 8 or higher
+      - image: circleci/openjdk:8-jdk  # Utilisation d'une image Docker avec Java 8 ou supérieur
     working_directory: ~/app
     steps:
       - checkout
       - run:
-          name: Run Unit Tests
+          name: Exécuter les tests unitaires
           command: mvn test
       - store_artifacts:
           path: target
       - run:
-          name: Run Checkstyle
+          name: Exécuter Checkstyle
           command: mvn checkstyle:check
       - run:
-          name: Generate Coverage Report
+          name: Générer le rapport de couverture
           command: mvn jacoco:report
       - persist_to_workspace:
           root: ~/app
@@ -32,13 +32,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install dependencies
+          name: Installer les dépendances
           command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - run:
-          name: Run tests and collect coverage
+          name: Exécuter les tests et collecter la couverture
           command: mvn clean test jacoco:report
-      - run :
-          name: Upload coverage to Codecov
+      - run:
+          name: Téléverser la couverture sur Codecov
           command: bash <(curl -s https://codecov.io/bash)
           uses: codecov/codecov-action@v4-beta
           env:
@@ -50,10 +50,29 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Run Checkstyle
+          name: Exécuter Checkstyle
           command: mvn checkstyle:checkstyle
       - store_artifacts:
           path: target/checkstyle-result.xml
+
+  publish-javadoc-job:
+    docker:
+      - image: cimg/openjdk:18.0.2
+    steps:
+      - checkout
+      - name: Configurer JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8' # Ou la version de Java que vous utilisez
+      - run:
+          name: Générer Javadoc
+          command: mvn javadoc:javadoc
+      - name: Déployer sur GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./target/site/apidocs # Chemin vers le répertoire contenant la Javadoc générée
+
 
 workflows:
   version: 2
@@ -69,4 +88,6 @@ workflows:
       - checkstyle-job:
           requires:
             - build
-
+      - publish-javadoc-job:
+          requires:
+            - build
