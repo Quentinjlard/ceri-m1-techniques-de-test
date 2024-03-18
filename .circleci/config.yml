@@ -30,20 +30,30 @@ jobs:
     docker:
       - image: cimg/openjdk:18.0.2
     steps:
-        - checkout
-        - run:
-            name: Install dependencies
-            command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-        - run:
-            name: Run tests and collect coverage
-            command: mvn clean test jacoco:report
-        - run :
-            name: Upload coverage to Codecov
-            command: bash <(curl -s https://codecov.io/bash)
-            uses: codecov/codecov-action@v4-beta
-            env:
-              CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - checkout
+      - run:
+          name: Install dependencies
+          command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+      - run:
+          name: Run tests and collect coverage
+          command: mvn clean test jacoco:report
+      - run :
+          name: Upload coverage to Codecov
+          command: bash <(curl -s https://codecov.io/bash)
+          uses: codecov/codecov-action@v4-beta
+          env:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
+  checkstyle-job:
+    docker:
+      - image: cimg/openjdk:18.0.2
+    steps:
+      - checkout
+      - run:
+          name: Run Checkstyle
+          command: mvn checkstyle:checkstyle
+      - store_artifacts:
+          path: target/checkstyle-result.xml
 
 workflows:
   version: 2
@@ -54,5 +64,8 @@ workflows:
             branches:
               only: master
       - codecov-job:
+          requires:
+            - build
+      - checkstyle-job:
           requires:
             - build
