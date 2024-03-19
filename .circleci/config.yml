@@ -50,6 +50,8 @@ jobs:
       - image: circleci/openjdk:11-jdk
     steps:
         - checkout
+        - attach_workspace:
+              at: docs/_build
         - run:
             name: Generate Javadoc
             command: mvn javadoc:javadoc
@@ -58,6 +60,15 @@ jobs:
             command: |
               mkdir -p _site
               cp -R target/site/apidocs/* _site/
+        - run:
+            name: Install and configure dependencies
+            command: |
+              npm install -g --silent gh-pages@2.0.1
+              git config user.email "ci-build@klukas.net"
+              git config user.name "ci-build"
+        - run:
+            name: Deploy docs to gh-pages branch
+            command: gh-pages --dist docs/_build/html
 
 
 
