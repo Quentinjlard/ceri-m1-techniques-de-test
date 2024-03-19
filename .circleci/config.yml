@@ -51,6 +51,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Node.js and npm
+          command: |
+            curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+            npm install -g --silent gh-pages@2.0.1
+      - run:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
       - run:
@@ -58,15 +64,8 @@ jobs:
           command: |
             mkdir -p _site
             cp -R target/site/apidocs/* _site/
-      - run:
-          name: Install and configure dependencies
-          command: |
-            npm install -g --silent gh-pages@2.0.1
-            git config user.email "ci-build@klukas.net"
-            git config user.name "ci-build"
-      - run:
-          name: Deploy docs to gh-pages branch
-          command: gh-pages --dist docs/_build/html
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 
