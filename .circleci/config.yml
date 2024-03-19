@@ -46,7 +46,7 @@ jobs:
           path: target/checkstyle-result.xml
       - run:
           name: Generate Checkstyle Badge
-          command: bash generate_checkstyle_badge.sh
+          command: bash script.sh
 
   # publish-javadoc-job:
       #  docker:
