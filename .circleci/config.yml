@@ -44,6 +44,9 @@ jobs:
           command: mvn checkstyle:checkstyle
       - store_artifacts:
           path: target/checkstyle-result.xml
+      - run:
+          name: Generate Checkstyle Badge
+          command: bash generate_checkstyle_badge.sh
 
   # publish-javadoc-job:
       #  docker:
