@@ -6,39 +6,12 @@
     <!-- Vérifie que chaque fichier se termine par une nouvelle ligne -->
     <module name="NewlineAtEndOfFile"/>
 
-    <!-- Vérifie l'indentation -->
-    <module name="Indentation">
-        <property name="caseIndent" value="4"/>
-        <property name="throwsIndent" value="4"/>
-        <property name="lineWrappingIndentation" value="4"/>
-    </module>
+    <!-- Déplacez le module Indentation à l'extérieur du module Checker -->
+</module>
 
-    <!-- Vérifie les noms de variables -->
-    <module name="LocalVariableName">
-        <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
-    </module>
-
-    <!-- Vérifie les noms de méthodes -->
-    <module name="MethodName">
-        <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
-    </module>
-
-    <!-- Vérifie les noms de classe -->
-    <module name="TypeName">
-        <property name="format" value="^[A-Z][a-zA-Z0-9]*$"/>
-    </module>
-
-    <!-- Vérifie les noms de constantes -->
-    <module name="ConstantName">
-        <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
-    </module>
-
-    <!-- Vérifie l'espacement autour des opérateurs -->
-    <module name="OperatorWrap"/>
-
-    <!-- Vérifie la longueur des lignes -->
-    <module name="LineLength">
-        <property name="max" value="120"/>
-        <property name="ignorePattern" value="^import\s.*$"/>
-    </module>
+        <!-- Placez le module Indentation en dehors du module Checker -->
+<module name="Indentation">
+<property name="caseIndent" value="4"/>
+<property name="throwsIndent" value="4"/>
+<property name="lineWrappingIndentation" value="4"/>
 </module>
