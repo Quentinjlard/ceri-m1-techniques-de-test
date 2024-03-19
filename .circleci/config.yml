@@ -49,18 +49,18 @@ jobs:
     docker:
       - image: circleci/openjdk:11-jdk
     steps:
-      - checkout
-      - run:
-          name: Build with Gradle
-          command: ./gradlew build
-      - run:
-          name: Generate Javadoc
-          command: ./gradlew javadoc
-      - run:
-          name: Deploy Javadoc to GitHub Pages
-          command: |
-            mkdir -p _site
-            cp -R build/docs/javadoc/* _site/
+        - checkout
+        - run:
+            name: Build with Maven
+            command: mvn clean install
+        - run:
+            name: Generate Javadoc
+            command: mvn javadoc:javadoc
+        - run:
+            name: Deploy Javadoc to GitHub Pages
+            command: |
+              mkdir -p _site
+              cp -R target/site/apidocs/* _site/
 
 
 workflows:
