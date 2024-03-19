@@ -6,19 +6,31 @@ import org.junit.Test;
 
 
 public class PokemonMetadataProviderTest {
+
     @Test
-    public void someTest() throws PokedexException {
-        PokemonTrainerFactory pokemonTrainerFactory = new PokemonTrainerFactory();
-        PokedexFactory pokedexFactory = new PokedexFactory();
+    public void testGetPokemonMetadata() throws PokedexException {
+        PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
 
-        PokemonTrainer testTrainer = pokemonTrainerFactory.createTrainer("Sacha", Team.VALOR, pokedexFactory);
-        assertEquals(testTrainer.getName(), "Sacha");
-        assertEquals(testTrainer.getPokedex().size(), 0);
-        assertEquals(testTrainer.getTeam(), Team.VALOR);
+        // Test avec un index valide
+        PokemonMetadata bulbasaurMetadata = metadataProvider.getPokemonMetadata(0);
+        assertEquals(126, bulbasaurMetadata.getIndex());
+        assertEquals("Bulbasaur", bulbasaurMetadata.getName());
+        assertEquals(126, bulbasaurMetadata.getAttack());
+        assertEquals(90, bulbasaurMetadata.getDefense());
+        assertEquals(60, bulbasaurMetadata.getStamina());
 
-        testTrainer = pokemonTrainerFactory.createTrainer("Laura", Team.MYSTIC, pokedexFactory);
-        assertEquals(testTrainer.getName(), "Laura");
-        assertEquals(testTrainer.getPokedex().size(), 0);
-        assertEquals(testTrainer.getTeam(), Team.MYSTIC);
+        // Test avec un autre index valide
+        PokemonMetadata ivysaurMetadata = metadataProvider.getPokemonMetadata(1);
+        assertEquals(156, ivysaurMetadata.getIndex());
+        assertEquals("Ivysaur", ivysaurMetadata.getName());
+        assertEquals(158, ivysaurMetadata.getAttack());
+        assertEquals(120, ivysaurMetadata.getDefense());
+        assertEquals(80, ivysaurMetadata.getStamina());
+    }
+
+    @Test(expected = PokedexException.class)
+    public void testGetPokemonMetadataWithInvalidIndex() throws PokedexException {
+        PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
+        metadataProvider.getPokemonMetadata(10); // Index invalide, doit lancer une exception PokedexException
     }
 }
