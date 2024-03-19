@@ -63,6 +63,11 @@ jobs:
             command: |
               mkdir -p _site
               cp -R target/site/apidocs/* _site/
+              git config --global user.email "you@example.com"
+              git config --global user.name "Your Name"
+              git add .
+              git commit -m "Add Javadoc documentation"
+              git push origin master
             env:
               GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
 
