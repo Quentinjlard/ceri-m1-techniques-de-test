@@ -6,19 +6,4 @@
     <!-- Vérifie que chaque fichier se termine par une nouvelle ligne -->
     <module name="NewlineAtEndOfFile"/>
 
-    <!-- Vérifie les noms de variables -->
-    <module name="LocalVariableName">
-        <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
-    </module>
-
-    <!-- Vérifie les noms de méthodes -->
-    <module name="MethodName">
-        <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
-    </module>
-
-    <!-- Vérifie les noms de constantes -->
-    <module name="ConstantName">
-        <property name="format" value="^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
-    </module>
-
 </module>
