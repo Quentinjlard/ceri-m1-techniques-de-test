@@ -1,0 +1,52 @@
+@options
+@packages
+-classpath
+'/home/circleci/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'/home/circleci/project/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2024. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/circleci/project/target/site/apidocs'
+-docencoding
+'UTF-8'
+-Xdoclint:none
+-doctitle
+'ceri-m1-techniques-de-test 1.0.0 API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/home/circleci/project/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'ceri-m1-techniques-de-test 1.0.0 API'
+fr.univavignon.pokedex.api
+/home/circleci/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar = 1710869958718
+/home/circleci/project/src/main/java = 1710869956038
+/home/circleci/project/target/site/apidocs/allclasses-index.html = 1710869964090
+/home/circleci/project/target/site/apidocs/allclasses.html = 1710869964094
+/home/circleci/project/target/site/apidocs/allpackages-index.html = 1710869964090
+/home/circleci/project/target/site/apidocs/constant-values.html = 1710869963986
+/home/circleci/project/target/site/apidocs/deprecated-list.html = 1710869964094
+/home/circleci/project/target/site/apidocs/element-list = 1710869963970
+/home/circleci/project/target/site/apidocs/help-doc.html = 1710869964098
+/home/circleci/project/target/site/apidocs/index-all.html = 1710869964082
+/home/circleci/project/target/site/apidocs/index.html = 1710869964094
+/home/circleci/project/target/site/apidocs/member-search-index.js = 1710869964082
+/home/circleci/project/target/site/apidocs/member-search-index.zip = 1710869964082
+/home/circleci/project/target/site/apidocs/overview-tree.html = 1710869964062
+/home/circleci/project/target/site/apidocs/package-search-index.js = 1710869964078
+/home/circleci/project/target/site/apidocs/package-search-index.zip = 1710869964082
+/home/circleci/project/target/site/apidocs/script.js = 1710869964098
+/home/circleci/project/target/site/apidocs/search.js = 1710869964102
+/home/circleci/project/target/site/apidocs/serialized-form.html = 1710869963994
+/home/circleci/project/target/site/apidocs/stylesheet.css = 1710869964098
+/home/circleci/project/target/site/apidocs/type-search-index.js = 1710869964082
+/home/circleci/project/target/site/apidocs/type-search-index.zip = 1710869964082
