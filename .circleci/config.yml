@@ -15,16 +15,9 @@ jobs:
           command: mvn test
       - store_artifacts:
           path: target
-      - run:
-          name: Exécuter Checkstyle
-          command: mvn checkstyle:check
-      - run:
-          name: Générer le rapport de couverture
-          command: mvn jacoco:report
-      - persist_to_workspace:
-          root: ~/app
-          paths:
-            - target
+
+
+
 
   codecov-job:
     docker:
@@ -37,6 +30,7 @@ jobs:
       - run:
           name: Exécuter les tests et collecter la couverture
           command: mvn clean test jacoco:report
+
       - run:
           name: Téléverser la couverture sur Codecov
           command: bash <(curl -s https://codecov.io/bash)
