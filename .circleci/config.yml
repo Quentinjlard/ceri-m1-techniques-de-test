@@ -59,7 +59,7 @@ jobs:
               mkdir -p _site
               cp -R target/site/apidocs/* _site/
             env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
 
 
 
