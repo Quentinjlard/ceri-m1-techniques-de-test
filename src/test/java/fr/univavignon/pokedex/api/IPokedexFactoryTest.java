@@ -18,10 +18,7 @@ public class IPokedexFactoryTest {
     private IPokedexFactory pokedexFactory;
     @Mock
     private IPokedex pokedex;
-    /* @Before
-    public void setUp(){
 
-    } */
 
     @Test
     public void testIPokedexFactory() {
