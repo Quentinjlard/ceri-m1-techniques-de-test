@@ -3,15 +3,6 @@
         "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
         "https://checkstyle.org/dtds/configuration_1_3.dtd">
 <module name="Checker">
-    <!-- Vérifie que chaque fichier se termine par une nouvelle ligne -->
     <module name="NewlineAtEndOfFile"/>
 
-    <!-- Déplacez le module Indentation à l'extérieur du module Checker -->
-</module>
-
-        <!-- Placez le module Indentation en dehors du module Checker -->
-<module name="Indentation">
-<property name="caseIndent" value="4"/>
-<property name="throwsIndent" value="4"/>
-<property name="lineWrappingIndentation" value="4"/>
 </module>
