@@ -16,21 +16,17 @@ jobs:
       - store_artifacts:
           path: target
 
-
-
-
   codecov-job:
     docker:
       - image: cimg/openjdk:18.0.2
     steps:
       - checkout
-      - run:
-          name: Installer les dépendances
-          command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+      #- run:
+        #    name: Installer les dépendances
+      #command: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
       - run:
           name: Exécuter les tests et collecter la couverture
           command: mvn clean test jacoco:report
-
       - run:
           name: Téléverser la couverture sur Codecov
           command: bash <(curl -s https://codecov.io/bash)
