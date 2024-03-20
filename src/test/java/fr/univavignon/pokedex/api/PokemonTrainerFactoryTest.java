@@ -9,14 +9,11 @@ public class PokemonTrainerFactoryTest {
     private PokemonTrainerFactory pokemonTrainerFactory;
     private PokedexFactory pokedexFactory;
 
-    @BeforeEach
-    public void setUp() {
-        pokemonTrainerFactory = new PokemonTrainerFactory();
-        pokedexFactory = new PokedexFactory();
-    }
-
     @Test
     public void createTrainer() throws PokedexException {
+        pokemonTrainerFactory = new PokemonTrainerFactory();
+        pokedexFactory = new PokedexFactory();
+
         // Créer un entraîneur avec l'équipe Team.VALOR
         PokemonTrainer trainer1 = pokemonTrainerFactory.createTrainer("Ash", Team.VALOR, pokedexFactory);
         assertEquals("Ash", trainer1.getName());
