@@ -16,7 +16,7 @@ public class PokemonTrainerFactoryTest {
     }
 
     @Test
-    public void testCreateTrainer() throws PokedexException {
+    public void createTrainer() throws PokedexException {
         // Créer un entraîneur avec l'équipe Team.VALOR
         PokemonTrainer trainer1 = pokemonTrainerFactory.createTrainer("Ash", Team.VALOR, pokedexFactory);
         assertEquals("Ash", trainer1.getName());
