@@ -1,7 +1,5 @@
-package fr.univavignon.pokedex.imp;
+package fr.univavignon.pokedex.api;
 
-import fr.univavignon.pokedex.api.IPokemonFactory;
-import fr.univavignon.pokedex.api.Pokemon;
 import org.apache.commons.collections4.map.UnmodifiableMap;
 
 import java.util.HashMap;
