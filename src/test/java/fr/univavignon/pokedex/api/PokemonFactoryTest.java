@@ -29,6 +29,6 @@ public class PokemonFactoryTest {
         assertEquals(hp, pikachu.getHp());
         assertEquals(dust, pikachu.getDust());
         assertEquals(candy, pikachu.getCandy());
-        assertEquals(0.85, pikachu.getIv(), 0.001); // La valeur de l'IV est un double, donc nous utilisons assertEquals avec une précision
+        assertEquals(0.85, pikachu.getIv(), 0.001);
     }
 }

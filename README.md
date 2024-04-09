@@ -40,7 +40,7 @@ Si vous ne spécifiez pas de tag, le dernier commit à la date-heure de la fin d
 
 - Nom : JUILLIARD
 - Prénom : Quentin
-- Groupe : Master IA - Groupe IA 
+- Groupe : Master IA - Groupe IA - alt
 
 
 
@@ -49,7 +49,7 @@ Si vous ne spécifiez pas de tag, le dernier commit à la date-heure de la fin d
 
 [![codecov](https://codecov.io/gh/Quentinjlard/ceri-m1-techniques-de-test/graph/badge.svg?token=KEMV4XR2ZF)](https://codecov.io/gh/Quentinjlard/ceri-m1-techniques-de-test)
 
-[![Checkstyle](https://img.shields.io/badge/checkstyle-passing-brightgreen)](https://circleci-tasks-prod.s3.us-east-1.amazonaws.com/storage/artifacts/a26643bf-8981-4dad-8c48-7bad3b573e6e/f849c5ad-7e64-40f1-8b29-3085aa7498bc/0/target/checkstyle-result.xml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQVFQINEOG3VZ3R4K%2F20240319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240319T145718Z&X-Amz-Expires=60&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJGMEQCIFKgkZ9LK2R%2Fw4adOi6FLkNJnK%2FO208aXYcghLI4fNjyAiBeh0ZokVfhsZg3ERPmNmyGGWg1Kp%2FyY3fCsFNozCzmxyq0Agjw%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDA0NTQ2NjgwNjU1NiIMNORu02fco43edolLKogCrxpTYyCkZ3SAQAcrONoxG8xWYMint%2BbHbgc47eGwN%2FB8JveisiA7CTCJUmgpyjW6Phd0ZniBijasp1gig5NhC5OAcfRaySzjR8NhyFsUWvYXattK4VL3Wiyua%2BzJdZdqejr188CR%2FnJRwFwqHyiKRNiA4bSf3oJnmyysQaSVZhipR2kWVEcCvOH2%2BTS4nHm%2F4uuNFix5TPa5PC6LJqNY6t8RezV%2BponxXYWt%2FVqNA76CW9g%2Bm%2BtSg1Yj9NErjooxUByu1gMo023qfpG8glbID1i%2B2PtB%2FIYqWZgzU9VZqr6SC2oC7rHID7jVowT%2FD4nMi3v7bkfbnoNtLFvCUd2JmGc110GxVPKnMJPJ5q8GOp4B0%2Fsjym48ewAxGsNb1%2Bl%2FAgqZiINgoJidyyWJH3TomhC3U3r4Vxkn%2BVH7VrqgwHYwb86trnWA9QT7lim4chTArde1dshd8uuzoPDZpxIa95G%2FLefr33X1nGxrPdFuX7VJ3v7iEW%2FRRHn%2BVy3n7Y8GsDSm5ry5YYvX1lYgRSKJMCwDgcuIqduaLKGbWzaE1UTxogyLdaS8sHDreh3GadU%3D&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=d94f8989257c383bbfdf89f2c7ae6f0050ade3214a8f55f1450661766fc8991b)
+[![Checkstyle](https://img.shields.io/badge/checkstyle-passing-brightgreen)](https://circleci-tasks-prod.s3.us-east-1.amazonaws.com/storage/artifacts/a26643bf-8981-4dad-8c48-7bad3b573e6e/2f2248c6-1a0e-4be2-848d-582095ecb9ea/0/target/checkstyle-result.xml?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQVFQINEOJN2Q3VOD%2F20240409%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240409T080958Z&X-Amz-Expires=60&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQCOI8XYibK2T0PqzUrCW5YJMH253Sw9qdU0C%2BjW1mLAZgIgbFWPIf88wDVT1g1BKzM%2B0Unf2fEb7AOv8jTe0lyNjVwqqwIIERADGgwwNDU0NjY4MDY1NTYiDI2ed81wnRG7C1JAjyqIAjX%2BSWEBF6pOE6hEKF7nBMz9UJEcRBHamne4PGTi9b19PGoPuHez4j%2B%2FHFp0kIhaHygEnwgYdKhg8aIsrpxWvaTsHhtK4D46HKno0g%2FoZ6zDR%2BWknhY59T75fedscslrXR4YKZAWv1WgPEXQAGuxIkRjWcGk02PVY6oIOz9KlTRrngzT51QrJi7bQEK1sixG1V71v8%2FYN5TRPYuxZRjIl4dOw6442vkTG2PaBKuK7BBcrIzR02fQYSfvfbHXOd67TKihaAm2ROoDSYSGsrHFjzLYmr9pUMD1LcwweRW4CoW8ySV37J74BSXmlP0V4RdwjME6%2BiSrxZziuWquPkj21U9APquGQyo3UjCN7NOwBjqdAZnHOhDzISp4ZOm4vgrV571RjbGCq7hW7k2K83x9t83Ngm%2Fnnw9JQTEKuZPJI6kxlnRG1anUaxFxNHgRlYnUJ1pzStgZtJ9JLcHoYPkQhZzaFOlGQxC7vFM6k%2F8T3BimdluXVklpiWv7U9k9zNdh2l0U2OiOepU1BYwEDBrzJhdNn1M8qH0UX7%2FMECG8HDsbEHaesuD3paqwTgwfu3c%3D&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=01752d43cd53bf50ae277ba33a0537a7726fa87f319d596a1b4663e7ca39ea8d)
 
 [Documentation de l'application ](https://quentinjlard.github.io/ceri-m1-techniques-de-test/target/site/apidocs/fr/univavignon/pokedex/api/package-summary.html)
 
@@ -62,3 +62,8 @@ Quelques probléme / complication sur la mise en place de certains outils de la 
 
 Probléme majeur lors de la création de la clé entre GitHub et Circle Ci car celle ci était unqiuement en Read et non en Write / Read.
 Ce qui a posé des problémes lors de la mise en place de la Javadoc.
+
+Lors de la mise en place du code de la Team Rocket, j'ai mis en place un fichier de test lié à la team rockets sur la 
+même principe que pokemon factory. L'ensemble des test passe.
+
+Pour le team rocket, probléme sur le fait que si l'index > 0 les méthode qu'elle met en place ne sont pas couverte par un test.
